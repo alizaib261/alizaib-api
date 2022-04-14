@@ -20,7 +20,7 @@ mongoose.connect("mongodb+srv://alizaib:alizaib123@restapi.c3aby.mongodb.net/myF
   });
 
 app.get('/', (req, res)=> {
-    res.send("<h3>Welcome to REST API</h3><p>All users: http://localhost:8000/users</p><p>Specific User: http://localhost:8000/users/:id</p><p>Create new user: http://localhost:8000/create</p><p>Update user: http://localhost:8000/update/:id</p><p>Delete User: http://localhost:8000/delete/:id</p>");
+    res.send("<h3>Welcome to REST API</h3><p>All users: http://localhost:8000/users</p><p>Specific User: http://localhost:8000/users/:id</p><p>Create a new user: http://localhost:8000/create</p><p>Update user: http://localhost:8000/update/:id</p><p>Delete User: http://localhost:8000/delete/:id</p>");
 })
 app.get('/users', (req, res)=> {
     User.find({},function(err, users){

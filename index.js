@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 var User = require('./db');
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -8,8 +9,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(cors());
 
-mongoose.connect("mongodb+srv://alizaib:alizaib123@restapi.c3aby.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect("mongodb+srv://alizaib:alizaib123@restapi.c3aby.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
   .then(() => {
     console.log("Connected to the database!");
   })

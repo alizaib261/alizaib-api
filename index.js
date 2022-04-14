@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var User = require('./db');
@@ -11,7 +12,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors());
 
-mongoose.connect("mongodb+srv://alizaib:alizaib123@restapi.c3aby.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+mongoose.connect(process.env.DATABASE)
   .then(() => {
     console.log("Connected to the database!");
   })
